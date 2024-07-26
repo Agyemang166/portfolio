@@ -1,0 +1,62 @@
+/* src/SignUpPage.css */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Hide scrollbar for the entire page */
+  }
+  
+  .background {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: auto; /* Allow scrolling in the background */
+  }
+  
+  .container {
+    max-height: 90vh; /* Make sure the container takes up most of the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 16px;
+    box-sizing: border-box;
+    height: 100%; /* Ensure container takes full height */
+  }
+  
+  .form-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+  }
+  
+  .avatar {
+    margin: 8px;
+    background-color: #1976d2;
+  }
+  
+  .title {
+    color: #1976d2;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .input-field {
+    margin-bottom: 16px;
+  }
+  
+  .submit-button {
+    background-color: #1976d2;
+    color: #fff;
+    margin-top: 16px;
+  }
+  
+  .submit-button:disabled {
+    background-color: #90caf9; /* Light blue when disabled */
+  }
+  

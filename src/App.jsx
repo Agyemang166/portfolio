@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import LoginPage from './components/Authentication/Login';
 import SignUpPage from './components/Authentication/Signup';
+import ForgotPassword from './components/Authentication/Forgotpassword';
 import TransitionWrapper from './components/TransitionWrapper/TransitionWrapper';
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       <Routes location={location}>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/" element={<LoginPage />} /> {/* Default route */}
+        <Route path="/forgotpassword" element={<ForgotPassword/>}/>
+        <Route path="/" element={<LoginPage />} /> 
       </Routes>
     </TransitionWrapper>
   );
