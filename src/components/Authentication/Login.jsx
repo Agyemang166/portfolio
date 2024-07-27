@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import { Container, Box, Avatar, Typography, TextField, Button, CssBaseline, Grid, Link } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link as RouterLink } from 'react-router-dom'; // Import RouterLink for navigation
+import { auth } from '../../firebaseconfig'; // Import auth from firebaseconfig
 import './ForgotPassword.css'; // Import the CSS file
 
 const theme = createTheme();
@@ -10,12 +12,19 @@ const theme = createTheme();
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Initialize navigate
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Handle login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
+    try {
+      // Handle login logic here
+      await auth.signInWithEmailAndPassword(email, password);
+      console.log('Signed in successfully');
+      <Link component={RouterLink} to="/" variant="body2">
+    </Link>
+      } catch (error) {
+      console.error('Error signing in:', error.message);
+    }
   };
 
   return (

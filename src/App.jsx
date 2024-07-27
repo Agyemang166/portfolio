@@ -1,9 +1,12 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+
 import LoginPage from './components/Authentication/Login';
 import SignUpPage from './components/Authentication/Signup';
 import ForgotPassword from './components/Authentication/Forgotpassword';
+import Home from './components/Home';
+
 import TransitionWrapper from './components/TransitionWrapper/TransitionWrapper';
 
 function App() {
@@ -12,10 +15,10 @@ function App() {
   return (
     <TransitionWrapper location={location}>
       <Routes location={location}>
+      <Route path="/" element={<Home />} /> 
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/forgotpassword" element={<ForgotPassword/>}/>
-        <Route path="/" element={<LoginPage />} /> 
       </Routes>
     </TransitionWrapper>
   );
